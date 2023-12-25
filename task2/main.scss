@@ -1,0 +1,30 @@
+$balckColor: black;
+.one {
+  border: 2px $balckColor;
+  margin: 10px 0;
+}
+.two {
+  border: 2px $balckColor;
+  margin: 10px 0;
+}
+.three {
+  border: 2px $balckColor;
+  margin: 10px 0;
+}
+
+@mixin backgroundColor($bgColor) {
+  .bg-#{$bgColor} {
+    background-color: $bgColor;
+  }
+}
+@mixin borderStyle($style) {
+  .border-#{$style} {
+    border-style: $style;
+  }
+}
+
+@include backgroundColor(aqua);
+@include backgroundColor(red);
+@include backgroundColor(green);
+@include borderStyle(dashed);
+@include borderStyle(solid);

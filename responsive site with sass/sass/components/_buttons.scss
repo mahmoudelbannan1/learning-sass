@@ -1,0 +1,13 @@
+.btn {
+  @extend %btnPlaceholder;
+}
+
+.btn-lg {
+  font-size: $btn-lg-fontSize;
+}
+.btn-md {
+  font-size: $btn-md-fontSize;
+}
+.btn-sm {
+  font-size: $btn-sm-fontSize;
+}

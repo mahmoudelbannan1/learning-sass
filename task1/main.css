@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+div {
+  border: 2px solid darkblue;
+}
+div header h1 {
+  padding: 20px 5px;
+  background-color: white;
+  color: darkblue;
+}
+
+#content {
+  background-color: black;
+  padding: 20px 2px;
+  border: 2px solid darkblue;
+}
+#content p {
+  padding: 5px;
+  color: white;
+  border: 2px solid darkblue;
+}
+
+footer {
+  padding: 0px 2px 10px;
+  background-color: black;
+}
+footer p {
+  padding: 20px 5px;
+  border: 1px solid green;
+  border-radius: 2px;
+  color: white;
+}/*# sourceMappingURL=main.css.map */

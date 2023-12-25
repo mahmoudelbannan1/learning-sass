@@ -1,0 +1,129 @@
+// @for $i from 1 to 13 {
+//   .col-#{$i} {
+//     width: 100/ (12 / $i) * 1%;
+//   }
+// }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container-fluid {
+  width: 100%;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+@mixin gridmixin($screeninfix, $numberofcolums, $screenbreakpoint) {
+  @if ($screeninfix== "") {
+    //  case extra small screen
+    @media all and (min-width: 0) {
+      @for $i from 1 through $numberofcolums {
+        .col-#{$i} {
+          width: 100/ (12 / $i) * 1%;
+        }
+      }
+      .container {
+        width: 100%;
+      }
+    }
+    // end of media query extra small
+  } @else {
+    @media all and (min-width: $screenbreakpoint) {
+      @for $i from 1 through $numberofcolums {
+        .col-#{$screeninfix}-#{$i} {
+          width: 100/ (12 / $i) * 1%;
+        }
+      }
+      .container {
+        width: $screenbreakpoint;
+        margin: auto;
+      }
+    } // end of media query extra small
+  }
+}
+
+@include gridmixin("", 12, 0px);
+@include gridmixin("sm", 12, 576px);
+@include gridmixin("md", 12, 768px);
+@include gridmixin("lg", 12, 992px);
+@include gridmixin("xl", 12, 1200px);
+@include gridmixin("xxl", 12, 1400px);
+
+.myborder {
+  border: 2px solid white;
+  border-radius: 5px 20px;
+}
+
+input[type="button"] {
+  padding: 10px 20px;
+}
+
+section.image {
+  background-image: url(image/2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 300px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+section.image p {
+  font-family: "Indie Flower", cursive;
+  font-family: "Nova Square", sans-serif;
+  color: white;
+  display: inline-block;
+  text-align: end;
+  margin: 30px 10px;
+  font-style: italic;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+img {
+  margin: auto;
+  width: 120px;
+  height: 120px;
+  border: 1.5px solid black;
+}
+.body {
+  margin: 20px 0px 10px;
+}
+.calture {
+  text-align: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+@media all and (min-width: 768px) {
+  .calture {
+    flex-direction: column-reverse;
+  }
+}
+@media all and (min-width: 992px) {
+  .calture {
+    flex-direction: row;
+  }
+  .calture .image {
+    padding: 5px;
+    border: 1px solid black;
+  }
+  .calture .image img {
+    border: none;
+  }
+}
+
+footer {
+  background-color: rgb(39, 118, 144);
+  padding: 5px 10px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+footer a {
+  text-decoration: none;
+}
